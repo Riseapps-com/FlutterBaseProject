@@ -1,0 +1,1 @@
+enum MenuItemOption { allCountries, countriesByRegion }
