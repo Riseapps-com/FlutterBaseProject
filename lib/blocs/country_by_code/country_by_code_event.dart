@@ -14,14 +14,10 @@ class FetchCountryByCode extends CountryByCodeEvent {
         super([code]);
 
   @override
-  String toString() {
-    return 'FetchCountryByCode{code: $code}';
-  }
+  String toString() => 'FetchCountryByCode{code: $code}';
 }
 
 class ClearCountryByCode extends CountryByCodeEvent {
   @override
-  String toString() {
-    return 'ClearCountryByCode{}';
-  }
+  String toString() => 'ClearCountryByCode{}';
 }

@@ -24,12 +24,12 @@ class RegionalBloc extends Equatable {
           otherAcronyms: otherAcronyms ?? this.otherAcronyms,
           otherNames: otherNames ?? this.otherNames);
 
-  factory RegionalBloc.fromJson(Map<String, dynamic> json) => _$RegionalBlocFromJson(json);
+  factory RegionalBloc.fromJson(Map<String, dynamic> json) =>
+      _$RegionalBlocFromJson(json);
 
   Map<String, dynamic> toJson() => _$RegionalBlocToJson(this);
 
   @override
-  String toString() {
-    return 'RegionalBloc{acronym: $acronym, name: $name, otherAcronyms: $otherAcronyms, otherNames: $otherNames}';
-  }
+  String toString() =>
+      'RegionalBloc{acronym: $acronym, name: $name, otherAcronyms: $otherAcronyms, otherNames: $otherNames}';
 }

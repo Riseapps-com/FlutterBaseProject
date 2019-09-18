@@ -23,12 +23,12 @@ class Language extends Equatable {
       name: name ?? this.name,
       nativeName: nativeName ?? this.nativeName);
 
-  factory Language.fromJson(Map<String, dynamic> json) => _$LanguageFromJson(json);
+  factory Language.fromJson(Map<String, dynamic> json) =>
+      _$LanguageFromJson(json);
 
   Map<String, dynamic> toJson() => _$LanguageToJson(this);
 
   @override
-  String toString() {
-    return 'Language{iso639_1: $iso639_1, iso639_2: $iso639_2, name: $name, nativeName: $nativeName}';
-  }
+  String toString() =>
+      'Language{iso639_1: $iso639_1, iso639_2: $iso639_2, name: $name, nativeName: $nativeName}';
 }

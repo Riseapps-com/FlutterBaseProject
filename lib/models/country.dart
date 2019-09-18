@@ -131,12 +131,12 @@ class Country extends Equatable {
           regionalBlocs: regionalBlocs ?? this.regionalBlocs,
           cioc: cioc ?? this.cioc);
 
-  factory Country.fromJson(Map<String, dynamic> json) => _$CountryFromJson(json);
+  factory Country.fromJson(Map<String, dynamic> json) =>
+      _$CountryFromJson(json);
 
   Map<String, dynamic> toJson() => _$CountryToJson(this);
 
   @override
-  String toString() {
-    return 'Country{name: $name, topLevelDomain: $topLevelDomain, alpha2Code: $alpha2Code, alpha3Code: $alpha3Code, callingCodes: $callingCodes, capital: $capital, altSpelling: $altSpelling, region: $region, subregion: $subregion, population: $population, latlng: $latlng, demonym: $demonym, area: $area, gini: $gini, timezones: $timezones, borders: $borders, nativeName: $nativeName, numericCode: $numericCode, currencies: $currencies, languages: $languages, flag: $flag, regionalBlocs: $regionalBlocs, cioc: $cioc}';
-  }
+  String toString() =>
+      'Country{name: $name, topLevelDomain: $topLevelDomain, alpha2Code: $alpha2Code, alpha3Code: $alpha3Code, callingCodes: $callingCodes, capital: $capital, altSpelling: $altSpelling, region: $region, subregion: $subregion, population: $population, latlng: $latlng, demonym: $demonym, area: $area, gini: $gini, timezones: $timezones, borders: $borders, nativeName: $nativeName, numericCode: $numericCode, currencies: $currencies, languages: $languages, flag: $flag, regionalBlocs: $regionalBlocs, cioc: $cioc}';
 }

@@ -9,16 +9,12 @@ abstract class CountriesByRegionState extends Equatable {
 
 class CountriesByRegionEmpty extends CountriesByRegionState {
   @override
-  String toString() {
-    return 'CountriesByRegionEmpty{}';
-  }
+  String toString() => 'CountriesByRegionEmpty{}';
 }
 
 class CountriesByRegionLoading extends CountriesByRegionState {
   @override
-  String toString() {
-    return 'CountriesByRegionLoading{}';
-  }
+  String toString() => 'CountriesByRegionLoading{}';
 }
 
 class CountriesByRegionLoaded extends CountriesByRegionState {
@@ -29,9 +25,7 @@ class CountriesByRegionLoaded extends CountriesByRegionState {
         super([countries]);
 
   @override
-  String toString() {
-    return 'CountriesByRegionLoaded{countries: $countries}';
-  }
+  String toString() => 'CountriesByRegionLoaded{countries: $countries}';
 }
 
 class CountriesByRegionError extends CountriesByRegionState {
@@ -42,7 +36,5 @@ class CountriesByRegionError extends CountriesByRegionState {
         super([error]);
 
   @override
-  String toString() {
-    return 'CountriesByRegionError{error: $error}';
-  }
+  String toString() => 'CountriesByRegionError{error: $error}';
 }

@@ -1,0 +1,1 @@
+enum CountriesType { allCountries, countriesByRegion }

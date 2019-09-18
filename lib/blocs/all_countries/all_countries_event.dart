@@ -8,14 +8,10 @@ abstract class AllCountriesEvent extends Equatable {
 
 class FetchAllCountries extends AllCountriesEvent {
   @override
-  String toString() {
-    return 'FetchAllCountries{}';
-  }
+  String toString() => 'FetchAllCountries{}';
 }
 
 class ClearAllCountries extends AllCountriesEvent {
   @override
-  String toString() {
-    return 'ClearAllCountries{}';
-  }
+  String toString() => 'ClearAllCountries{}';
 }

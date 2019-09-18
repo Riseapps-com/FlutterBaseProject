@@ -42,12 +42,12 @@ class Translations extends Equatable {
           hr: hr ?? this.hr,
           fa: fa ?? this.fa);
 
-  factory Translations.fromJson(Map<String, dynamic> json) => _$TranslationsFromJson(json);
+  factory Translations.fromJson(Map<String, dynamic> json) =>
+      _$TranslationsFromJson(json);
 
   Map<String, dynamic> toJson() => _$TranslationsToJson(this);
 
   @override
-  String toString() {
-    return 'Translations{de: $de, es: $es, fr: $fr, ja: $ja, it: $it, br: $br, pt: $pt, nl: $nl, hr: $hr, fa: $fa}';
-  }
+  String toString() =>
+      'Translations{de: $de, es: $es, fr: $fr, ja: $ja, it: $it, br: $br, pt: $pt, nl: $nl, hr: $hr, fa: $fa}';
 }

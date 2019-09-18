@@ -9,16 +9,12 @@ abstract class CountryByCodeState extends Equatable {
 
 class CountryByCodeEmpty extends CountryByCodeState {
   @override
-  String toString() {
-    return 'CountryByCodeEmpty{}';
-  }
+  String toString() => 'CountryByCodeEmpty{}';
 }
 
 class CountryByCodeLoading extends CountryByCodeState {
   @override
-  String toString() {
-    return 'CountryByCodeLoading{}';
-  }
+  String toString() => 'CountryByCodeLoading{}';
 }
 
 class CountryByCodeLoaded extends CountryByCodeState {
@@ -29,9 +25,7 @@ class CountryByCodeLoaded extends CountryByCodeState {
         super([country]);
 
   @override
-  String toString() {
-    return 'CountryByCodeLoaded{country: $country}';
-  }
+  String toString() => 'CountryByCodeLoaded{country: $country}';
 }
 
 class CountryByCodeError extends CountryByCodeState {
@@ -42,7 +36,5 @@ class CountryByCodeError extends CountryByCodeState {
         super([error]);
 
   @override
-  String toString() {
-    return 'CountryByCodeError{error: $error}';
-  }
+  String toString() => 'CountryByCodeError{error: $error}';
 }

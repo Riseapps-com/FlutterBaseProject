@@ -9,16 +9,12 @@ abstract class AllCountriesState extends Equatable {
 
 class AllCountriesEmpty extends AllCountriesState {
   @override
-  String toString() {
-    return 'AllCountriesEmpty{}';
-  }
+  String toString() => 'AllCountriesEmpty{}';
 }
 
 class AllCountriesLoading extends AllCountriesState {
   @override
-  String toString() {
-    return 'AllCountriesLoading{}';
-  }
+  String toString() => 'AllCountriesLoading{}';
 }
 
 class AllCountriesLoaded extends AllCountriesState {
@@ -29,9 +25,7 @@ class AllCountriesLoaded extends AllCountriesState {
         super([countries]);
 
   @override
-  String toString() {
-    return 'AllCountriesLoaded{countries: $countries}';
-  }
+  String toString() => 'AllCountriesLoaded{countries: $countries}';
 }
 
 class AllCountriesError extends AllCountriesState {
@@ -42,7 +36,5 @@ class AllCountriesError extends AllCountriesState {
         super([error]);
 
   @override
-  String toString() {
-    return 'AllCountriesError{error: $error}';
-  }
+  String toString() => 'AllCountriesError{error: $error}';
 }

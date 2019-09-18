@@ -15,14 +15,10 @@ class FetchCountriesByRegion extends CountriesByRegionEvent {
         super([regionType]);
 
   @override
-  String toString() {
-    return 'FetchCountriesByRegion{regionType: $regionType}';
-  }
+  String toString() => 'FetchCountriesByRegion{regionType: $regionType}';
 }
 
 class ClearCountriesByRegion extends CountriesByRegionEvent {
   @override
-  String toString() {
-    return 'ClearCountriesByRegion{}';
-  }
+  String toString() => 'ClearCountriesByRegion{}';
 }

@@ -18,12 +18,11 @@ class Currency extends Equatable {
       name: name ?? this.name,
       symbol: symbol ?? this.symbol);
 
-  factory Currency.fromJson(Map<String, dynamic> json) => _$CurrencyFromJson(json);
+  factory Currency.fromJson(Map<String, dynamic> json) =>
+      _$CurrencyFromJson(json);
 
   Map<String, dynamic> toJson() => _$CurrencyToJson(this);
 
   @override
-  String toString() {
-    return 'Currency{code: $code, name: $name, symbol: $symbol}';
-  }
+  String toString() => 'Currency{code: $code, name: $name, symbol: $symbol}';
 }
