@@ -6,12 +6,12 @@ import 'package:flutter_base_app/colors/colors.dart';
 import 'package:flutter_base_app/models/menu_item_option.dart';
 
 class MenuItem extends StatefulWidget {
-  final MenuItemPressCallback menuItemPressCallback;
+  final MenuItemTapCallback menuItemTapCallback;
   final MenuItemOption menuItemOption;
 
   MenuItem({
     Key key,
-    this.menuItemPressCallback,
+    this.menuItemTapCallback,
     this.menuItemOption = MenuItemOption.allCountries,
   });
 
@@ -41,8 +41,8 @@ class _MenuItemState extends State<MenuItem> {
   }
 
   void _handleMenuItemTap() {
-    if (widget.menuItemPressCallback != null) {
-      widget.menuItemPressCallback(widget.menuItemOption);
+    if (widget.menuItemTapCallback != null) {
+      widget.menuItemTapCallback(widget.menuItemOption);
     }
   }
 

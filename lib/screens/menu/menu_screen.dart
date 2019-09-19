@@ -19,19 +19,22 @@ class MenuScreen extends StatelessWidget {
           children: <Widget>[
             MenuItem(
               menuItemOption: MenuItemOption.allCountries,
-              menuItemPressCallback: (MenuItemOption menuItemOption) =>
-                  Navigator.pushNamed(context, CountriesScreen.routeName,
-                      arguments: CountriesScreenArguments(
-                          title:
-                              AppLocalizations.of(context).t('All Countries'),
-                          countriesType: CountriesType.allCountries)),
+              menuItemTapCallback: (MenuItemOption menuItemOption) =>
+                  Navigator.pushNamed(
+                context,
+                CountriesScreen.routeName,
+                arguments: CountriesScreenArguments(
+                  title: AppLocalizations.of(context).t('All Countries'),
+                  countriesType: CountriesType.allCountries,
+                ),
+              ),
             ),
             Divider(
               height: 2.0,
             ),
             MenuItem(
               menuItemOption: MenuItemOption.countriesByRegion,
-              menuItemPressCallback: (MenuItemOption menuItemOption) =>
+              menuItemTapCallback: (MenuItemOption menuItemOption) =>
                   Navigator.pushNamed(context, SelectRegionScreen.routeName),
             ),
           ],

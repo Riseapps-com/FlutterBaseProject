@@ -51,7 +51,11 @@ class MyApp extends StatelessWidget {
               child: CountriesScreen(),
             ),
         SelectRegionScreen.routeName: (context) => SelectRegionScreen(),
-        CountryDetailsScreen.routeName: (context) => CountryDetailsScreen(),
+        CountryDetailsScreen.routeName: (context) => BlocProvider(
+              builder: (context) =>
+                  CountryByCodeBloc(repository: _countriesRepository),
+              child: CountryDetailsScreen(),
+            ),
       },
       initialRoute: MenuScreen.routeName,
     );
