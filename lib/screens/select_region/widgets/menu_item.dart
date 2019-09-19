@@ -2,16 +2,16 @@ import 'package:flutter/material.dart';
 import 'package:flutter_base_app/app_constants.dart';
 import 'package:flutter_base_app/callbacks/callbacks.dart';
 import 'package:flutter_base_app/colors/colors.dart';
-import 'package:flutter_base_app/models/menu_item_option.dart';
+import 'package:flutter_base_app/models/models.dart';
 import 'package:flutter_base_app/utils/countries_utils.dart';
 
 class MenuItem extends StatefulWidget {
-  final MenuItemTapCallback callback;
-  final MenuItemOption menuItemOption;
+  final RegionItemTapCallback callback;
+  final RegionType regionType;
 
   MenuItem({
     this.callback,
-    this.menuItemOption = MenuItemOption.allCountries,
+    this.regionType = RegionType.africa,
   });
 
   @override
@@ -41,7 +41,7 @@ class _MenuItemState extends State<MenuItem> {
 
   void _handleMenuItemTap() {
     if (widget.callback != null) {
-      widget.callback(widget.menuItemOption);
+      widget.callback(widget.regionType);
     }
   }
 
@@ -61,8 +61,7 @@ class _MenuItemState extends State<MenuItem> {
               Expanded(
                 flex: 1,
                 child: Image.asset(
-                  CountriesUtils.menuItemToImageAsset(
-                      context, widget.menuItemOption),
+                  CountriesUtils.regionTypeToImageAsset(context, widget.regionType),
                   width: 80.0,
                   height: 80.0,
                 ),
@@ -70,8 +69,8 @@ class _MenuItemState extends State<MenuItem> {
               Expanded(
                 flex: 2,
                 child: Text(
-                  CountriesUtils.menuItemToString(
-                      context, widget.menuItemOption),
+                  CountriesUtils.regionTypeToString(
+                      context, widget.regionType),
                   overflow: TextOverflow.ellipsis,
                   style: TextStyle(
                     color: Colors.white,

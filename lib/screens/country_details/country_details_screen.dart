@@ -15,8 +15,12 @@ class CountryDetailsScreen extends StatefulWidget {
 
 class _CountryDetailsScreenState extends State<CountryDetailsScreen> {
   @override
-  void didChangeDependencies() {
-    super.didChangeDependencies();
+  void initState() {
+    super.initState();
+    WidgetsBinding.instance.addPostFrameCallback((_) => _fetchData());
+  }
+  
+  void _fetchData() {
     final CountryDetailsScreenArguments arguments =
         ModalRoute.of(context).settings.arguments;
     BlocProvider.of<CountryByCodeBloc>(context)
