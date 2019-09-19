@@ -62,39 +62,41 @@ class CountryDetails extends StatelessWidget {
                     height: 64.0,
                   ),
                 ),
-                Container(
-                  margin: EdgeInsets.only(
-                    left: 8.0,
-                  ),
-                  child: Column(
-                    mainAxisSize: MainAxisSize.max,
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: <Widget>[
-                      Container(
-                        margin: EdgeInsets.only(top: 2.0, bottom: 2.0),
-                        child: Text(country.name,
+                Flexible(
+                  child: Container(
+                    margin: EdgeInsets.only(
+                      left: 8.0,
+                    ),
+                    child: Column(
+                      mainAxisSize: MainAxisSize.max,
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: <Widget>[
+                        Container(
+                          margin: EdgeInsets.only(top: 2.0, bottom: 2.0),
+                          child: Text(country.name,
+                              overflow: TextOverflow.ellipsis,
+                              style: TextStyle(
+                                fontSize: 18,
+                                color: Colors.black,
+                                fontFamily: 'Quicksand',
+                                fontWeight: FontWeight.bold,
+                              )),
+                        ),
+                        Container(
+                          margin: EdgeInsets.only(top: 2.0, bottom: 2.0),
+                          child: Text(
+                            country.capital,
                             overflow: TextOverflow.ellipsis,
                             style: TextStyle(
-                              fontSize: 18,
-                              color: Colors.black,
+                              fontSize: 16,
+                              color: Colors.grey,
                               fontFamily: 'Quicksand',
                               fontWeight: FontWeight.bold,
-                            )),
-                      ),
-                      Container(
-                        margin: EdgeInsets.only(top: 2.0, bottom: 2.0),
-                        child: Text(
-                          country.capital,
-                          overflow: TextOverflow.ellipsis,
-                          style: TextStyle(
-                            fontSize: 16,
-                            color: Colors.grey,
-                            fontFamily: 'Quicksand',
-                            fontWeight: FontWeight.bold,
+                            ),
                           ),
-                        ),
-                      )
-                    ],
+                        )
+                      ],
+                    ),
                   ),
                 ),
               ],

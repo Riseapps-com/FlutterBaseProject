@@ -57,7 +57,7 @@ class MyApp extends StatelessWidget {
               child: CountryDetailsScreen(),
             ),
       },
-      initialRoute: MenuScreen.routeName,
+      initialRoute: SplashScreen.routeName,
     );
   }
 }

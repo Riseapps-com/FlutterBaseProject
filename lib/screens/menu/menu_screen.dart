@@ -8,7 +8,7 @@ import 'package:flutter_base_app/screens/screens.dart';
 import 'package:flutter_base_app/widgets/widgets.dart';
 
 class MenuScreen extends StatelessWidget {
-  static const routeName = '/';
+  static const routeName = '/Menu';
 
   @override
   Widget build(BuildContext context) {
