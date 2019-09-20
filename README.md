@@ -1,16 +1,18 @@
-# flutter_base_app
+# FlutterBaseApp
 
-A base project on Flutter.
+A small base project on Flutter with the newest technologies and pure code.
 
-## Getting Started
+## How it works
 
-This project is a starting point for a Flutter application.
+| How it works  | iOS | Android |
+| :--- | :---: | :---: |
+|| <img src="ios_example.gif" width="240" /> | <img src="android_example.gif" width="240" /> |
 
-A few resources to get you started if this is your first Flutter project:
+## Technology stack
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
-
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+| For  | Link |
+| :--- | :--- |
+| Flutter | [Flutter](https://flutter.dev/) |
+| Language | [Dart](https://dart.dev/) |
+| Bloc | [bloc](https://felangel.github.io/bloc/#/) |
+| Network | [dio](https://pub.dev/packages/dio) |
