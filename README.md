@@ -6,7 +6,7 @@ A small base project on Flutter with the newest technologies and pure code.
 
 | How it works  | iOS | Android |
 | :--- | :---: | :---: |
-|| <img src="ios_example.gif" width="240" /> | <img src="android_example.gif" width="240" /> |
+|| <img src="ios.gif" width="240" /> | <img src="android.gif" width="240" /> |
 
 ## Technology stack
 
