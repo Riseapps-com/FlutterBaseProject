@@ -27,7 +27,7 @@ class CountriesList extends StatelessWidget {
             country.name,
             overflow: TextOverflow.ellipsis,
             style: TextStyle(
-              fontFamily: 'Quciksand',
+              fontFamily: 'Quiсksand',
               fontSize: 16,
               fontWeight: FontWeight.bold,
             ),
@@ -36,7 +36,7 @@ class CountriesList extends StatelessWidget {
             country.capital,
             overflow: TextOverflow.ellipsis,
             style: TextStyle(
-              fontFamily: 'Quciksand',
+              fontFamily: 'Quiсksand',
               fontSize: 14,
               fontWeight: FontWeight.bold,
             ),
