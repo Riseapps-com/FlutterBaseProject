@@ -1,4 +1,5 @@
 import 'package:bloc/bloc.dart';
+import 'package:dio/dio.dart';
 import 'package:flutter_base_app/blocs/blocs.dart';
 import 'package:flutter_base_app/models/models.dart';
 import 'package:flutter_base_app/repositories/repositories.dart';
@@ -31,7 +32,7 @@ class CountriesByRegionBloc
       final List<Country> countries = await repository
           .fetchCountriesByRegion((event as FetchCountriesByRegion).regionType);
       yield CountriesByRegionLoaded(countries: countries);
-    } catch (e) {
+    } on DioError catch(e) {
       yield CountriesByRegionError(error: e.message);
     }
   }

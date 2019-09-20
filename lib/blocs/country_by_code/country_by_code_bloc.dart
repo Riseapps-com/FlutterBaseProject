@@ -1,4 +1,5 @@
 import 'package:bloc/bloc.dart';
+import 'package:dio/dio.dart';
 import 'package:flutter_base_app/blocs/blocs.dart';
 import 'package:flutter_base_app/models/models.dart';
 import 'package:flutter_base_app/repositories/repositories.dart';
@@ -28,7 +29,7 @@ class CountryByCodeBloc extends Bloc<CountryByCodeEvent, CountryByCodeState> {
       final Country country = await repository
           .fetchCountryByCode((event as FetchCountryByCode).code);
       yield CountryByCodeLoaded(country: country);
-    } catch (e) {
+    } on DioError catch(e) {
       print(e);
       yield CountryByCodeError(error: e.message);
     }

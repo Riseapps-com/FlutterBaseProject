@@ -51,8 +51,10 @@ class CountryDetails extends StatelessWidget {
             Row(
               children: <Widget>[
                 CachedNetworkImage(
+                  width: 64.0,
+                  height: 64.0,
                   imageUrl:
-                      'https://www.countryflags.io/${country.alpha2Code.toLowerCase()}/shiny/64.png',
+                      'https://www.countryflags.io/${country.alpha2Code.toLowerCase()}/flat/64.png',
                   placeholder: (context, url) => Container(
                     width: 64.0,
                     height: 64.0,

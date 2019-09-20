@@ -1,4 +1,5 @@
 import 'package:bloc/bloc.dart';
+import 'package:dio/dio.dart';
 import 'package:flutter_base_app/blocs/blocs.dart';
 import 'package:flutter_base_app/models/models.dart';
 import 'package:flutter_base_app/repositories/repositories.dart';
@@ -26,7 +27,7 @@ class AllCountriesBloc extends Bloc<AllCountriesEvent, AllCountriesState> {
     try {
       final List<Country> countries = await repository.fetchAllCountries();
       yield AllCountriesLoaded(countries: countries);
-    } catch (e) {
+    } on DioError catch(e) {
       yield AllCountriesError(error: e.message);
     }
   }

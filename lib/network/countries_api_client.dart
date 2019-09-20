@@ -1,44 +1,36 @@
 import 'dart:convert';
 
+import 'package:dio/dio.dart';
 import 'package:flutter_base_app/models/models.dart';
-import 'package:http/http.dart' as http;
 import 'package:meta/meta.dart';
 
 class CountriesApiClient {
   static const baseUrl = 'https://restcountries.eu/rest/v2';
-  final http.Client httpClient;
+  static const connectTimeout = 8000;
+  static const receiveTimeout = 8000;
+  static const sendTimeout = 8000;
 
-  CountriesApiClient({@required this.httpClient}) : assert(httpClient != null);
+  final Dio dio;
+
+  CountriesApiClient({@required this.dio}) : assert(dio != null);
 
   Future<List<Country>> fetchAllCountries() async {
-    final response = await httpClient.get('$baseUrl/all');
-    if (response.statusCode != 200) {
-      throw Exception(
-          'Error when fetching all countries, response = ${response.body}');
-    }
-    return (jsonDecode(response.body) as List)
+    final response = await dio.get('$baseUrl/all');
+    return (jsonDecode(response.data) as List)
         .map((e) => Country.fromJson(e))
         .toList();
   }
 
   Future<List<Country>> fetchCountriesByRegion(RegionType regionType) async {
-    final response = await httpClient
+    final response = await dio
         .get('$baseUrl/region/${regionType.toString().split('.').last}');
-    if (response.statusCode != 200) {
-      throw Exception(
-          'Error when fetching countries by region, response = ${response.body}');
-    }
-    return (jsonDecode(response.body) as List)
+    return (jsonDecode(response.data) as List)
         .map((e) => Country.fromJson(e))
         .toList();
   }
 
   Future<Country> fetchCountryByCode(String code) async {
-    final response = await httpClient.get('$baseUrl/alpha/$code');
-    if (response.statusCode != 200) {
-      throw Exception(
-          'Error when fetching country by code, response = ${response.body}');
-    }
-    return Country.fromJson(jsonDecode(response.body));
+    final response = await dio.get('$baseUrl/alpha/$code');
+    return Country.fromJson(jsonDecode(response.data));
   }
 }

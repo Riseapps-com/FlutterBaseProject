@@ -1,4 +1,5 @@
 import 'package:bloc/bloc.dart';
+import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_base_app/blocs/blocs.dart';
 import 'package:flutter_base_app/network/countries_api_client.dart';
@@ -6,7 +7,6 @@ import 'package:flutter_base_app/repositories/repositories.dart';
 import 'package:flutter_base_app/screens/screens.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
-import 'package:http/http.dart' as http;
 
 import 'app_localizations.dart';
 
@@ -18,7 +18,15 @@ void main() {
 class MyApp extends StatelessWidget {
   static final CountriesRepository _countriesRepository = CountriesRepository(
     client: CountriesApiClient(
-      httpClient: http.Client(),
+      dio: Dio(BaseOptions(
+        baseUrl: CountriesApiClient.baseUrl,
+        connectTimeout: CountriesApiClient.connectTimeout,
+        receiveTimeout: CountriesApiClient.receiveTimeout,
+        sendTimeout: CountriesApiClient.sendTimeout,
+        responseType: ResponseType.plain,
+      ))
+        ..interceptors
+            .add(LogInterceptor(requestBody: true, responseBody: true)),
     ),
   );
 

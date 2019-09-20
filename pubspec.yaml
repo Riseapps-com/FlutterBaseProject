@@ -30,7 +30,7 @@ dependencies:
   flutter_bloc: 0.21.0
   meta: 1.1.7
   equatable: 0.5.1
-  http: 0.12.0+2
+  dio: 3.0.1
   json_annotation: 3.0.0
   cached_network_image: 1.1.1
   package_info: 0.4.0+6
