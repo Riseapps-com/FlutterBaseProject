@@ -40,8 +40,13 @@ class MyApp extends StatelessWidget {
         GlobalWidgetsLocalizations.delegate,
         AppLocalizations.delegate,
       ],
-      localeResolutionCallback: (locale, supportedLocales) =>
-          supportedLocales.contains(locale) ? locale : supportedLocales.first,
+      localeResolutionCallback: (locale, supportedLocales) => supportedLocales
+                  .where((e) => e.languageCode == locale.languageCode)
+                  .toList()
+                  .length !=
+              0
+          ? locale
+          : supportedLocales.first,
       routes: {
         SplashScreen.routeName: (context) => SplashScreen(),
         MenuScreen.routeName: (context) => MenuScreen(),
